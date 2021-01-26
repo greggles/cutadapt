@@ -10,7 +10,7 @@ jobs:
       - name: Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.7'
+          python-version: '3.8'
       - name: Install
         run: |
           python -m venv venv
@@ -19,7 +19,7 @@ jobs:
       - name: Make exe
         run: |
           echo "from cutadapt.__main__ import main" > script.py
-          echo "sys.exit(main())" >> script.py
+          echo "sys.exit(main_cli())" >> script.py
           venv/Scripts/pyinstaller -F -w -n cutadapt script.py
       - name: Smoke test
         run: |
