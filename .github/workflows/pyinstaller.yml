@@ -25,7 +25,7 @@ jobs:
         run: |
           dist/cutadapt.exe --version
           dist/cutadapt.exe -a TTAGACATATCTCCGTCG tests\data\small.fastq > result.fastq
-          comp tests\cut\small.fastq result.fastq
+          fc tests\cut\small.fastq result.fastq
       - uses: actions/upload-artifact@v2
         with:
           name: cutadapt-exe
