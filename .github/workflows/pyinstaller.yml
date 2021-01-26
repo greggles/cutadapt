@@ -23,8 +23,8 @@ jobs:
           venv/Scripts/pyinstaller -F -w -n cutadapt script.py
       - name: Smoke test
         run: |
-          dist/cutadapt.exe --version
-          dist/cutadapt.exe -a TTAGACATATCTCCGTCG tests\data\small.fastq > result.fastq
+          dist\cutadapt.exe --version
+          dist\cutadapt.exe -a TTAGACATATCTCCGTCG -o result.fastq tests\data\small.fastq
           fc.exe tests\cut\small.fastq result.fastq
       - uses: actions/upload-artifact@v2
         with:
